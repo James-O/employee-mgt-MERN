@@ -14,7 +14,7 @@ const Login = () => {
         //     'Access-Control-Allow-Origin': '*', 
         //     'Content-Type': 'application/json'
         // }})
-        axios.post('http://localhost:8082/auth/login',{email, password })
+        axios.post('https://employee-mgt-mern-api.vercel.app/auth/login',{email, password })
             .then(res => {
                 if (res.data.status) {  
                     navigate('/')
