@@ -19,7 +19,7 @@ app.use(cookieParser())
 app.use('/auth', UserRouter)
 
 //mongoose.connect('mongodb://127.0.0.1:27017/authentication')
-mongoose.connect('mongodb+srv://James:jamesdgr81A!@atlascluster.vzvs9.mongodb.net/authentication')
+mongoose.connect('mongodb+srv://James:jamesdgr81A!@atlascluster.vzvs9.mongodb.net/authentication?retryWrites=true&w=majority&appName=AtlasCluster')
 
 app.listen(process.env.PORT, ()=>{
     console.log("Server is running")
