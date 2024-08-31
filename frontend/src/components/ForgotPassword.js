@@ -9,7 +9,7 @@ const ForgotPassword = () => {
     axios.defaults.withCredentials=true;
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('https://employee-mgt-mern-api.vercel.app/auth/forgot-password',{email})
+        axios.post('/auth/forgot-password',{email})
             .then(res => {
                 if (res.data.status) {
                     alert('Check your email for reset password link')

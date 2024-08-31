@@ -10,7 +10,7 @@ const ResetPassword = () => {
     axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('https://employee-mgt-mern-api.vercel.app/auth/reset-password/' + token, { password })
+        axios.post('/auth/reset-password/' + token, { password })
             .then(res => {
                 if (res.data.status) {
                     //alert('password reseted')

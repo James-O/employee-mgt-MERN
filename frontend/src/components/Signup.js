@@ -8,17 +8,19 @@ const Signup = () => {
     const [password, setPassword] = useState('')
     const navigate = useNavigate('')
 
+    axios.defaults.withCredentials = true;
     const handleSubmit=(e)=>{
         e.preventDefault()
         //axios.post('http://localhost:8082/auth/signup',{username, email, password})
-        axios.post('https://employee-mgt-mern-api.vercel.app/auth/signup',{username, email, password})
+        //axios.post('https://employee-mgt-mern-api.vercel.app/auth/signup',{username, email, password})
+        axios.post('/auth/signup',{username, email, password})
         .then(res=>{
             if (res.data.status) {
                 alert("user registered")
                 navigate('/login')
             }
         })
-        .catch(err=>console.log(err))
+        .catch(err=>{return (console.log(err))})
     }
     return (
         <div>
