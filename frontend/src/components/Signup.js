@@ -29,17 +29,17 @@ const Signup = () => {
                     <form onSubmit={handleSubmit}>
                         <h2>Sign Up</h2>
                         <div className='mt-2'>
-                            <label for='username' className='mb-2'>Username</label>
+                            <label htmlFor='username' className='mb-2'>Username</label>
                             <input type='text' placeholder='Enter your username' name='username' className='form-control rounded-0'
                             onChange={(e)=>setUsername(e.target.value)} />
                         </div>
                         <div className='mt-2'>
-                            <label for='email' className='mb-2'>Email</label>
+                            <label htmlFor='email' className='mb-2'>Email</label>
                             <input type='email' placeholder='Enter your email' name='email' className='form-control rounded-0' 
                             onChange={(e)=>setEmail(e.target.value)}/>
                         </div>
                         <div className='mt-2'>
-                            <label for='password' className='mb-2'>Password</label>
+                            <label htmlFor='password' className='mb-2'>Password</label>
                             <input type='password' placeholder='************' name='password' className='form-control rounded-0' 
                             onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
