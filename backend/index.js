@@ -10,7 +10,8 @@ dotenv.config()
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin:['http://localhost:3000',"https://employee-mgt-mern-frontend.vercel.app"],
+    //origin:['http://localhost:3000',"https://employee-mgt-mern-frontend.vercel.app"],
+    origin:["https://employee-mgt-mern-frontend.vercel.app"],
     methods:["POST","GET"],
     credentials:true,
     optionSuccessStatus:200
