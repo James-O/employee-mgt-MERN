@@ -6,21 +6,32 @@ const Signup = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const navigate = useNavigate('')
+    const navigate = useNavigate()
 
-    axios.defaults.withCredentials = true;
+    //axios.defaults.withCredentials = true;
     const handleSubmit=(e)=>{
         e.preventDefault()
         //axios.post('http://localhost:8082/auth/signup',{username, email, password})
-        //axios.post('https://employee-mgt-mern-api.vercel.app/auth/signup',{username, email, password})
-        axios.post('/auth/signup',{username, email, password})
-        .then(res=>{
+        axios.post('https://employee-mgt-mern-api.vercel.app/auth/signup',{username, email, password})
+        //axios.post('/auth/signup',{username, email, password})
+        //"proxy": "https://employee-mgt-mern-api.vercel.app",
+        // .then(res=>{
+        //     if (res.data.status) {
+        //         alert("user registered")
+        //         navigate('/login')
+        //     }
+        // })
+        // .catch(err=>{return (console.log(err))})
+        .then(res => {
             if (res.data.status) {
-                alert("user registered")
-                navigate('/login')
+                alert("User registered");
+                navigate('/login');
             }
         })
-        .catch(err=>{return (console.log(err))})
+        .catch(err => {
+            console.error(err);
+            alert("An error occurred. Please try again later.");
+        });
     }
     return (
         <div>
