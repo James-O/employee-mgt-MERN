@@ -9,19 +9,22 @@ dotenv.config()
 
 const app = express()
 app.use(express.json())
+
+// CORS configuration
 app.use(cors({
-    //origin:['http://localhost:3000',"https://employee-mgt-mern-frontend.vercel.app"],
-    origin:["https://employee-mgt-mern-frontend.vercel.app"],
-    methods:["POST","GET"],
-    credentials:true,
-    optionSuccessStatus:200
-}))
+    origin: ["https://employee-mgt-mern-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+}));
+
 app.use(cookieParser())
 app.use('/auth', UserRouter)
 
 //mongoose.connect('mongodb://127.0.0.1:27017/authentication')
-mongoose.connect('mongodb+srv://James:jamesdgr81A!@atlascluster.vzvs9.mongodb.net/authentication?retryWrites=true&w=majority&appName=AtlasCluster')
-
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 app.listen(process.env.PORT, ()=>{
     console.log("Server is running")
 })
