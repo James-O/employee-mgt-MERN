@@ -12,9 +12,10 @@ app.use(express.json())
 
 // CORS configuration
 app.use(cors({
-    origin: ["https://employee-mgt-mern-frontend.vercel.app"],
+    //origin: ["https://employee-mgt-mern-frontend.vercel.app"],
+    origin: ["*"],
     methods: ["POST", "GET"],
-    credentials: true,
+    //credentials: true,
 }));
 
 app.use(cookieParser())
