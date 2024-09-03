@@ -9,14 +9,14 @@ dotenv.config()
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+//app.use(cors())
 // CORS configuration
-// app.use(cors({
-//     //origin: ["https://employee-mgt-mern-frontend.vercel.app"],
-//     origin: ["*"],
-//     methods: ["POST", "GET"],
-//     //credentials: true,
-// }));
+app.use(cors({
+    origin: ["https://employee-mgt-mern-frontend.vercel.app"],
+    //origin: ["*"],
+    methods: ["POST", "GET"],
+    //credentials: true,
+}));
 
 app.use(cookieParser())
 app.use('/auth', UserRouter)
