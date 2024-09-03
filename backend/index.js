@@ -11,12 +11,12 @@ const app = express()
 app.use(express.json())
 
 // CORS configuration
-app.use(cors({
-    //origin: ["https://employee-mgt-mern-frontend.vercel.app"],
-    origin: ["*"],
-    methods: ["POST", "GET"],
-    //credentials: true,
-}));
+// app.use(cors({
+//     //origin: ["https://employee-mgt-mern-frontend.vercel.app"],
+//     origin: ["*"],
+//     methods: ["POST", "GET"],
+//     //credentials: true,
+// }));
 
 app.use(cookieParser())
 app.use('/auth', UserRouter)
